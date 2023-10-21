@@ -30,8 +30,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  clientID: "77475616123-5ifavijp4vovtr0q7gqfb53csahinivt.apps.googleusercontent.com",
+  clientSecret: "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",
   callbackURL: "https://secret-ph3p.onrender.com/auth/google/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
