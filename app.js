@@ -30,9 +30,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/secrets"
+  clientID: "77475616123-5ifavijp4vovtr0q7gqfb53csahinivt.apps.googleusercontent.com",
+  clientSecret: "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",
+  callbackURL: "https://secret-ph3p.onrender.com/auth/google/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
   console.log(profile);
@@ -44,7 +44,7 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_APP_ID,
   clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: "http://localhost:3000/auth/facebook/secrets"
+  callbackURL: "https://secret-ph3p.onrender.com/auth/facebook/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
   console.log(profile);
@@ -57,7 +57,7 @@ function(accessToken, refreshToken, profile, cb) {
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/userDB");
+  await mongoose.connect("mongodb+srv://ns916169:app@secret.l5dpg12.mongodb.net/userDB");
   
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
