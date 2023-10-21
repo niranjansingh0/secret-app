@@ -8,8 +8,8 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const FacebookStrategy = require('passport-facebook').Strategy;
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const FacebookStrategy = require('passport-facebook').Strategy;
 const findOrCreate = require('mongoose-findorcreate')
 const app = express();
 
@@ -29,30 +29,30 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new GoogleStrategy({
-  clientID: "77475616123-5ifavijp4vovtr0q7gqfb53csahinivt.apps.googleusercontent.com",
-  clientSecret: "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",
-  callbackURL: "https://secret-ph3p.onrender.com/auth/google/secrets"
-},
-function(accessToken, refreshToken, profile, cb) {
-  console.log(profile);
-  User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    return cb(err, user);
-  });
-}
-));
-passport.use(new FacebookStrategy({
-  clientID: process.env.FACEBOOK_APP_ID,
-  clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: "https://secret-ph3p.onrender.com/auth/facebook/secrets"
-},
-function(accessToken, refreshToken, profile, cb) {
-  console.log(profile);
-  User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-    return cb(err, user);
-  });
-}
-));
+// passport.use(new GoogleStrategy({
+//   clientID: process.env.GOOGLE_CLIENT_ID,
+//   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//   callbackURL: "http://localhost:3000/auth/google/secrets"
+// },
+// function(accessToken, refreshToken, profile, cb) {
+//   console.log(profile);
+//   User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//     return cb(err, user);
+//   });
+// }
+// ));
+// passport.use(new FacebookStrategy({
+//   clientID: process.env.FACEBOOK_APP_ID,
+//   clientSecret: process.env.FACEBOOK_APP_SECRET,
+//   callbackURL: "http://localhost:3000/auth/facebook/secrets"
+// },
+// function(accessToken, refreshToken, profile, cb) {
+//   console.log(profile);
+//   User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+//     return cb(err, user);
+//   });
+// }
+// ));
 
 main().catch(err => console.log(err));
 
