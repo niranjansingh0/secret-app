@@ -4,10 +4,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs =require("ejs");
 const mongoose = require('mongoose');
-const encrypt =require ("mongoose-encryption");
+// const encrypt =require ("mongoose-encryption");
+// const md5 =require("md5");
+const bcrypt = require('bcrypt');
 const app = express();
 
-console.log(process.env.API_KEY);
+// console.log(process.env.API_KEY);
 
 main().catch(err => console.log(err));
 
