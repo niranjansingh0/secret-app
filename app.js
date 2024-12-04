@@ -13,7 +13,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate')
 const app = express();
 
-// console.log(process.env.API_KEY);
+// console.log(process.env.API_KEY);.
+
 
 
 app.use(express.static("public"));
