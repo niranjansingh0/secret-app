@@ -13,8 +13,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate')
 const app = express();
 
-// console.log(process.env.API_KEY);.
-
+// console.log(process.env.API_KEY);
 
 
 app.use(express.static("public"));
@@ -58,9 +57,15 @@ function(accessToken, refreshToken, profile, cb) {
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.URL);
-  
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+  try {
+    await mongoose.connect(process.env.URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('MongoDB connected successfully');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+  }
 }
 const userSchema =new mongoose.Schema({
   email: String,
