@@ -26,8 +26,8 @@
 
 ## 📸 Screenshots
 
-> Add your screenshots inside a `.screenshots` folder and rename them like below:
+> Add your screenshots inside a `.screenshots` folder and reference them like below:
 
-```md
-![Login Page](login.png)
-![Secrets Feed](signUp.png)
+![Login Page](/login.png)
+![Secrets Feed](/signUp.png)
+
