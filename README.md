@@ -26,7 +26,7 @@
 
 ## 📸 Screenshots
 
-> Add your screenshots inside a `.screenshots` folder and reference them like below:
+
 
 ![Login Page](/login.png)
 ![Secrets Feed](/signUp.png)
