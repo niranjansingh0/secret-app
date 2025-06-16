@@ -29,5 +29,5 @@
 > Add your screenshots inside a `.screenshots` folder and rename them like below:
 
 ```md
-![Login Page](.screenshots/login.png)
-![Secrets Feed](.screenshots/secrets.png)
+![Login Page](login.png)
+![Secrets Feed](signUp.png)
